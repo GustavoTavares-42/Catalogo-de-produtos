@@ -26,3 +26,11 @@ Route::prefix('categorias')->group(function () {
     Route::put('/{id}', [\App\Http\Controllers\CategoriaController::class, 'atualizarCategoria']);
     Route::delete('/{id}', [\App\Http\Controllers\CategoriaController::class, 'excluirCategoria']);
 });
+
+Route::prefix('produtos')->group(function () {
+    Route::get('/', [\App\Http\Controllers\ProdutoController::class, 'buscarProdutos']);
+    Route::get('/{id}', [\App\Http\Controllers\ProdutoController::class, 'buscarProduto']);
+    Route::post('/', [\App\Http\Controllers\ProdutoController::class, 'cadastrarProduto']);
+    Route::put('/{id}', [\App\Http\Controllers\ProdutoController::class, 'atualizarProduto']);
+    Route::delete('/{id}', [\App\Http\Controllers\ProdutoController::class, 'excluirProduto']);
+});
